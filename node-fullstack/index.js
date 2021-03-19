@@ -5,6 +5,7 @@ const express = require('express')
 const cors = require('cors')
 const app = express()
 const Note = require('./models/Note')
+const usersRouter = require('./controllers/users')
 
 
 app.use(cors())
@@ -81,6 +82,8 @@ app.post('/api/notes', (req, res) => {
     })
 
 })
+
+app.use('/api/users', usersRouter);
 
 
 
